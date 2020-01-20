@@ -1,0 +1,50 @@
+body {
+    color: #CF191C;
+    background-image: url('../images/fbi.jpg');
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: auto;
+    background-repeat: no-repeat;
+    margin: 3em 6em;
+}
+
+div.form_body {
+    overflow-x: auto;
+    display: none;
+    margin: 1em 0;
+    padding: 1em 2%;
+    border: 0.2em solid blueviolet;
+    background-color: aliceblue;
+}
+
+div#bio {
+    width: fit-content;
+    background-color: black;
+}
+
+div#remove_container {
+    display: none;
+}
+
+td {
+    padding: 15px;
+    text-align: justify;
+}
+
+table {
+    height: 100px;
+}
+
+select#emp {
+    width: 100%;
+    height: 3em;
+    background-color: aliceblue;
+}
+
+div.sbox {
+    padding: 0.2em;
+    border: 0.2em solid black;
+    background-color: #A13535;
+}
