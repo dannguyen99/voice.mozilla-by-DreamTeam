@@ -1,4 +1,5 @@
 <h2> Team Members </h2>
+---
 <ul>
 <li> Nguyen Duc Dan </li>
 <li> Nguyen Tri Huan </li>
@@ -9,4 +10,14 @@
 <li> Phan Manh Tung </li>
 </ul>
 
-<h2> Phong's Branch </h2>
+<h2> VoiceViet Routing Example </h2>
+**How to use**
+---
+<ul>
+<li>git clone https://github.com/dannguyen99/voice.mozilla_by_DreamTeam.git voiceviet</li>
+<li>cd voiceviet</li>
+<li>npm install</li>
+<li>npm start</li>
+<li>localhost:3000/</li>
+<li>Profit!</li>
+</ul>
