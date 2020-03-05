@@ -1,0 +1,15 @@
+<div class="modal-body row">
+  <div class="col-md-5">
+    <!-- Your first column here -->
+    <p id="helpus">Help us build a high quality, publicly open dataset</p>
+    <p id="profile">Having a profile is not required to contribute though it is helpful, see why below.</p>
+    <button class="btn btn-primary">Sign up for an account</button>
+    <app-header-login (featureSelected)="onNavigate($event)"></app-header-login>
+    <app-benefit-login *ngIf="loadedFeature==='benefits'"></app-benefit-login>
+    <app-public-login *ngIf="loadedFeature !=='benefits'"></app-public-login>
+  </div>
+  <div class="col-md-7">
+    <!-- Your second column here -->
+    <img src="https://voice.mozilla.org/img/mars.svg" class="img">
+  </div>
+</div>

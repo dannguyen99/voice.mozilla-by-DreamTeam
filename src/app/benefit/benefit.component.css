@@ -1,0 +1,23 @@
+#column1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 0.8cm;
+  margin-left: 100px;
+}
+
+#column2 {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 50px;
+  margin-right: 300px;
+  font-size: 15px;
+}
+
+.read-more {
+  margin-left: 50px;
+}
+
+.readmore {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 50px;
+  margin-right: 300px;
+  font-size: 15px;
+}
