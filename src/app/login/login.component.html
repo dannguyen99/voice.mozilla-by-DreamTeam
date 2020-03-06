@@ -5,11 +5,13 @@
     <p id="profile">Having a profile is not required to contribute though it is helpful, see why below.</p>
     <button class="btn btn-primary">Sign up for an account</button>
     <app-header-login (featureSelected)="onNavigate($event)"></app-header-login>
-    <app-benefit-login *ngIf="loadedFeature==='benefits'"></app-benefit-login>
-    <app-public-login *ngIf="loadedFeature !=='benefits'"></app-public-login>
+    <app-benefit-login *ngIf="loadedFeature==='benefits'" (choiceSelected)="onChooseImage($event)"></app-benefit-login>
+    <app-public-login *ngIf="loadedFeature !=='benefits'" (choiceSelected)="onChooseImage($event)"></app-public-login>
   </div>
   <div class="col-md-7">
     <!-- Your second column here -->
     <img src="https://voice.mozilla.org/img/mars.svg" class="img">
+    <img src="{{ imagePath }}" class="img1">
+
   </div>
 </div>

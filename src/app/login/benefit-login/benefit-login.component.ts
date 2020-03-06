@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-benefit-login',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BenefitLoginComponent implements OnInit {
 
+  @Output() choiceSelected = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  select(choice: string) {
+    this.choiceSelected.emit(choice);
   }
 
 }

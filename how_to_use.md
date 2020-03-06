@@ -1,0 +1,1 @@
+to run the angular app, please install bootstrap by the command: npm install bootstrap@3

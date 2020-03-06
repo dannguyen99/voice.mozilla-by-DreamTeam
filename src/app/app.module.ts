@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BenefitLoginComponent } from './login/benefit-login/benefit-login.component';
 import { PublicLoginComponent } from './login/public-login/public-login.component';
 import { HeaderLoginComponent } from './login/header-login/header-login.component';
+import { MainFeaturesComponent } from './main-features/main-features.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HeaderLoginComponent } from './login/header-login/header-login.componen
     FooterComponent,
     BenefitLoginComponent,
     PublicLoginComponent,
-    HeaderLoginComponent
+    HeaderLoginComponent,
+    MainFeaturesComponent,
   ],
   imports: [
     BrowserModule
