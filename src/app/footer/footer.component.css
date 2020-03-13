@@ -1,0 +1,43 @@
+.footer-nav {
+  background-color: black;
+}
+.usth {
+  margin-left: 100px;
+  width: 20%;
+  height: 20%;
+}
+.copyright {
+  margin-top: 0px;
+  height: 10px;
+}
+
+.facebook {
+  width: 5%;
+  height: 5%;
+  margin-left: 220px;
+}
+
+.twitter {
+  width: 5%;
+  height: 5%;
+  margin-left: 20px;
+}
+
+h5 {
+  color: white;
+}
+
+.name {
+  margin-left: 100px;
+}
+
+.copyright {
+  margin-top: 5px;
+  background-color: red;
+  height: 20px;
+  align-content: center;
+}
+
+.github {
+  color: white;
+}
