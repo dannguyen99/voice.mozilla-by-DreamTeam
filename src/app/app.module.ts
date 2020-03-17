@@ -11,6 +11,11 @@ import { BenefitLoginComponent } from './login/benefit-login/benefit-login.compo
 import { PublicLoginComponent } from './login/public-login/public-login.component';
 import { HeaderLoginComponent } from './login/header-login/header-login.component';
 import { MainFeaturesComponent } from './main-features/main-features.component';
+import { HomeComponent } from './home/home.component';
+import { ContributionComponent } from './contribution/contribution.component';
+import { AboutComponent } from './about/about.component';
+import { AppRoutingModule } from './app-routing.module';
+import { LogComponent } from './log/log.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +29,14 @@ import { MainFeaturesComponent } from './main-features/main-features.component';
     PublicLoginComponent,
     HeaderLoginComponent,
     MainFeaturesComponent,
+    HomeComponent,
+    ContributionComponent,
+    AboutComponent,
+    LogComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
