@@ -36,8 +36,16 @@ h5 {
 }
 
 .but {
-  margin-left: auto;
+  margin-left: 225px;
   margin-right: auto;
-  display: block;
-  margin-bottom: 100px;
+}
+
+.but-check {
+  margin-left: 415px;
+  margin-right: auto;
+}
+
+.but-edit {
+  margin-left: 430px;
+  margin-right: auto;
 }
