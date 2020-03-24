@@ -25,11 +25,12 @@ export class RecordComponent implements OnInit {
           method: 'GET',
           headers: {
               'Content-Type': 'application/x-www-form-urlencoded',
-              Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pbmhkdWMxMDAyOThAZ21haWwuY29tIiwidXNlcklEIjoiNWU3OTdlNmU1NTM4YjEwMDE3Mjc0ZTM2IiwiaWF0IjoxNTg1MDIxNjUzLCJleHAiOjE1ODUwMjUyNTN9.LhcVldXyCqTxYYQ-LMReHY5TiZAJQxj5MjmcZ7Vkq5I'
+              Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pbmhkdWMxMDAyOThAZ21haWwuY29tIiwidXNlcklEIjoiNWU3OTdlNmU1NTM4YjEwMDE3Mjc0ZTM2IiwiaWF0IjoxNTg1MDQwMjY0LCJleHAiOjE1ODUwNDM4NjR9.ijtMDw-8TbdlEGBsDXawHFJiHK1Rj724qhPHlaqjGwY'
           },
         }
       );
       const response = await data.json();
+      console.log(response);
       for (const quote of response.quotes) {
         this.quotes.push(quote);
       }
