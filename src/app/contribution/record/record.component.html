@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  <div class="container-fluid bg-primary">
+    <h2>Record</h2>
+    <h1 *ngFor="let quote of quotes"> {{ quote.message }}</h1>
+    <div [ngSwitch]="imagePath">
+      <div *ngSwitchCase="'/assets/image/record_voice.png'">
+        <img src="{{ imagePath }}" class="icon" style="cursor: pointer;" (click)="record()">
+      </div>
+      <div *ngSwitchCase="'/assets/image/stop.png'">
+        <img src="{{ imagePath }}" class="icon" style="cursor: pointer;" (click)="stopRecord()">
+      </div>
+      <div *ngSwitchDefault>
+        <img src="{{ imagePath }}" style="cursor: pointer;" (click)="record()">
+      </div>
+    </div>
+    <h4>Please click the record button and start recording. Click the pause button when you finish recording</h4>
+  </div>
+</body>
+
+</html>

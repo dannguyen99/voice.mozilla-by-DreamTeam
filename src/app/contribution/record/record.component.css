@@ -1,0 +1,19 @@
+.icon {
+  width: 5%;
+  height: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+
+h1 {
+  align-content: center;
+  text-align: center;
+  font-size: 3cm;
+}
+
+h2,h4 {
+  align-content: center;
+  text-align: center;
+}

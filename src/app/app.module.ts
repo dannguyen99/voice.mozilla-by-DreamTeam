@@ -16,7 +16,9 @@ import { ContributionComponent } from './contribution/contribution.component';
 import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LogComponent } from './log/log.component';
-import { WebAudioRecorderComponent } from './web-audio-recorder/web-audio-recorder.component';
+import { ListenComponent } from './listen/listen.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RecordComponent } from './contribution/record/record.component';
 
 @NgModule({
   declarations: [
@@ -34,10 +36,13 @@ import { WebAudioRecorderComponent } from './web-audio-recorder/web-audio-record
     ContributionComponent,
     AboutComponent,
     LogComponent,
+    ListenComponent,
+    RecordComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
