@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>
+            LogInForm
+        </title>
+    </head>
+    <nav class="navbar navbar-default bg-danger">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <ul class="nav navbar-nav">
+            <li routerLinkActive="active" style="cursor: pointer;" routerLink="/home"><img src="/assets/image/back.png" class="back"></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <body>
+        <div class="loginbox">
+            <img src="/assets/image/avatar.png" class="avatar" >
+                <h1>
+                    Log In
+                </h1>
+                <form>
+                    <label> Email </label>
+                    <input #email type="text" name="myemail" />
+                    <label> Password </label>
+                    <input #password type="password" name="mypassword" />
+                    <input type="button" name="submit" value="Login" (click)="onLogin()" />
+                </form>
+
+
+        </div>
+    </body>
+</html>
+

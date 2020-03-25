@@ -3,9 +3,10 @@ import { HomeComponent } from './home/home.component';
 import { ContributionComponent } from './contribution/contribution.component';
 import { AboutComponent } from './about/about.component';
 import { NgModule } from '@angular/core';
-import { LogComponent } from './log/log.component';
 import { RecordComponent } from './contribution/record/record.component';
-import { ListenComponent } from './listen/listen.component';
+import { ListenComponent } from './contribution/listen/listen.component';
+import { SignupComponent } from './signup/signup.component';
+import { SigninComponent } from './signin/signin.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -16,7 +17,8 @@ const appRoutes: Routes = [
     { path: 'listen', component: ListenComponent}
   ]},
   { path: 'about', component: AboutComponent},
-  { path: 'login', component: LogComponent}
+  { path: 'signin', component: SigninComponent},
+  { path: 'signup', component: SignupComponent}
 ];
 
 @NgModule({

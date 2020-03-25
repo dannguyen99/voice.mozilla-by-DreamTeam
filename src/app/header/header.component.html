@@ -13,7 +13,9 @@
         <li routerLinkActive="active"><a class="nav-item item" routerLink="/contribute">Contribute</a></li>
         <li routerLinkActive="active"><a class="nav-item item" routerLink="/about">About</a></li>
 
-        <li routerLinkActive="active"><button class="nav-item navbar-btn button outline rounded item" routerLink="/login">Login / Sign Up</button></li>
+        <li routerLinkActive="active"><button class="nav-item navbar-btn button outline rounded item" *ngIf="isLoggedIn$ | async" style="float: right;" routerLink="/signin">Sign In</button></li>
+        <li routerLinkActive="active"><button class="nav-item navbar-btn button outline1 rounded item" *ngIf="isLoggedIn$ | async" style="float: right;" routerLink="/signup">Sign Up</button></li>
+        <li><img src="/assets/image/avatar.png" class="avatar" *ngIf="isAccountDisplay$ | async"></li>
       </ul>
     </div>
   </div>

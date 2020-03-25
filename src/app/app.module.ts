@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { IntroContentComponent } from './intro-content/intro-content.component';
 import { LoginComponent } from './login/login.component';
 import { BenefitComponent } from './benefit/benefit.component';
 import { FooterComponent } from './footer/footer.component';
@@ -15,16 +14,17 @@ import { HomeComponent } from './home/home.component';
 import { ContributionComponent } from './contribution/contribution.component';
 import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LogComponent } from './log/log.component';
-import { ListenComponent } from './listen/listen.component';
+import { ListenComponent } from './contribution/listen/listen.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RecordComponent } from './contribution/record/record.component';
+import { SignupComponent } from './signup/signup.component';
+import { SigninComponent } from './signin/signin.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    IntroContentComponent,
     LoginComponent,
     BenefitComponent,
     FooterComponent,
@@ -35,16 +35,17 @@ import { RecordComponent } from './contribution/record/record.component';
     HomeComponent,
     ContributionComponent,
     AboutComponent,
-    LogComponent,
     ListenComponent,
-    RecordComponent
+    RecordComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

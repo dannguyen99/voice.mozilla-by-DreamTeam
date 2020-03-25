@@ -12,7 +12,18 @@
   justify-content: center;
   height: min-content;
   color: black;
-  margin-left: 650px;
+  margin-left: 600px;
+}
+
+.button.outline1 {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  height: min-content;
+  color: black;
+  margin-left: 20px;
 }
 
 .record_voice {
@@ -26,3 +37,11 @@
   margin-left: 50px;
   font-size: 20px;
 }
+
+.avatar {
+  margin-top: 10px;
+  width: 30px;
+  height: 30px;
+  margin-left: 700px;
+}
+
