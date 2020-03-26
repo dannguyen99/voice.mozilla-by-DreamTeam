@@ -6,10 +6,18 @@
   <title>Document</title>
 </head>
 <body>
-  <div *ngFor="let record of records">
-    <audio  controls src="{{ record.mediaURL }}" type="audio/mpeg"></audio>
-    <h1> {{ record.quote.message }} </h1>
+  <div class="container bg-success" style="margin-top: 50px; height: 600px;">
+    <h2>Evaluate the record</h2>
+    <div class="col-xs-6" style="left: 35%;">
+      <audio  controls src="{{ loadedRecord.mediaURL }}" type="audio/mpeg"></audio>
+    </div>
+    <div class="row" style="margin-top: 100px; margin-left: 450px;">
+      <img src="/assets/image/like.png" style="cursor: pointer;" [iconBackground]="'grey'" class="icon">
+      <img src="/assets/image/dislike.png" [iconBackground]="'grey'" style="margin-left: 40px; cursor: pointer;" class="icon">
+    </div>
+    <h5 (click)="next()" style="text-align: right; cursor: pointer; margin-right: 20px; margin-top: 50px;">Next</h5>
+    <h1> {{ loadedRecord.quote.message }} </h1>
+    <h4>Please click the audio to play, listen and choose your opinion: like or dislike the record</h4>
   </div>
-
 </body>
 </html>

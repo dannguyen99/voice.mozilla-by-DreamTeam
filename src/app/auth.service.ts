@@ -42,5 +42,11 @@ export class AuthService {
     }
   }
 
+  logout() {
+    this.loggedIn.next(true);
+    this.accountDisplay.next(false);
+    this.router.navigate(['/home']);
+  }
+
 
 }

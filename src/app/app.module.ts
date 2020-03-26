@@ -20,6 +20,7 @@ import { RecordComponent } from './contribution/record/record.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { AuthService } from './auth.service';
+import { BackgroundDirective } from './background.directive';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AuthService } from './auth.service';
     ListenComponent,
     RecordComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    BackgroundDirective
   ],
   imports: [
     BrowserModule,

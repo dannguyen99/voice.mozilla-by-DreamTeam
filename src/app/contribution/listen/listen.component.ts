@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ListenComponent implements OnInit {
 
   records = [];
+  loadedRecord;
+  i = 0;
 
   constructor() { }
 
@@ -22,7 +24,7 @@ export class ListenComponent implements OnInit {
           method: 'GET',
           headers: {
               'Content-Type': 'application/x-www-form-urlencoded',
-              Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imh1Z2hqYWNrbWFuMmtAZ21haWwuY29tIiwidXNlcklEIjoiNWU2M2I5NGI4ZTdhYjI0M2E4NDhlZGQ5IiwiaWF0IjoxNTg1MTI5Nzg5LCJleHAiOjE1ODUxMzMzODl9.rB9cihoacmvhuqizjI8ZxuHB0PCFrlDn_Zo_iVIYn_o'
+              Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pbmhkdWMxMDAyOThAZ21haWwuY29tIiwidXNlcklEIjoiNWU3OTdlNmU1NTM4YjEwMDE3Mjc0ZTM2IiwiaWF0IjoxNTg1MTkyNDAyLCJleHAiOjE1ODUxOTYwMDJ9.ZsgOIwzVTaT3d2VnAVrAaHwQwmS4tg43tHEiLgPjj5k'
           },
         }
       );
@@ -31,9 +33,15 @@ export class ListenComponent implements OnInit {
       for (const record of response.recordings) {
         this.records.push(record);
       }
+      this.loadedRecord = this.records[this.i];
     } catch (err) {
       console.log('Error', err);
     }
+  }
+
+  next() {
+    this.i++;
+    this.fetchRecording();
   }
 
 }

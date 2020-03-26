@@ -17,6 +17,8 @@ export class RecordComponent implements OnInit {
 
   imagePath = '/assets/image/record_voice.png';
   quotes = [];
+  i = 0;
+  loadedQuote;
 
   fetchPost = async () => {
     try {
@@ -25,7 +27,7 @@ export class RecordComponent implements OnInit {
           method: 'GET',
           headers: {
               'Content-Type': 'application/x-www-form-urlencoded',
-              Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pbmhkdWMxMDAyOThAZ21haWwuY29tIiwidXNlcklEIjoiNWU3OTdlNmU1NTM4YjEwMDE3Mjc0ZTM2IiwiaWF0IjoxNTg1MDQwMjY0LCJleHAiOjE1ODUwNDM4NjR9.ijtMDw-8TbdlEGBsDXawHFJiHK1Rj724qhPHlaqjGwY'
+              Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pbmhkdWMxMDAyOThAZ21haWwuY29tIiwidXNlcklEIjoiNWU3OTdlNmU1NTM4YjEwMDE3Mjc0ZTM2IiwiaWF0IjoxNTg1MTg4NDE3LCJleHAiOjE1ODUxOTIwMTd9.jWsSSKry-MQMKCLF6SQ0aGUXIeC0J70us8-Ewe-Ubag'
           },
         }
       );
@@ -34,6 +36,7 @@ export class RecordComponent implements OnInit {
       for (const quote of response.quotes) {
         this.quotes.push(quote);
       }
+      this.loadedQuote = this.quotes[this.i];
     } catch (err) {
       console.log('Error', err);
     }
@@ -91,6 +94,11 @@ export class RecordComponent implements OnInit {
     this.imagePath = '/assets/image/record_voice.png';
     stopRecord();
     uploadFile();
+  }
+
+  next() {
+    this.i++;
+    this.fetchPost();
   }
 
 }

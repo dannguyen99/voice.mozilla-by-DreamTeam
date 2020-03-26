@@ -8,20 +8,23 @@
 </head>
 
 <body>
-  <div class="container-fluid bg-primary">
+  <div class="container bg-primary" style="margin-top: 50px; height: 600px;">
     <h2>Record</h2>
-    <h1 *ngFor="let quote of quotes"> {{ quote.message }}</h1>
-    <div [ngSwitch]="imagePath">
-      <div *ngSwitchCase="'/assets/image/record_voice.png'">
-        <img src="{{ imagePath }}" class="icon" style="cursor: pointer;" (click)="record()">
+    <div class="row">
+      <div [ngSwitch]="imagePath">
+        <div *ngSwitchCase="'/assets/image/record_voice.png'">
+          <img src="{{ imagePath }}" class="icon" style="cursor: pointer;" (click)="record()">
+        </div>
+        <div *ngSwitchCase="'/assets/image/stop.png'">
+          <img src="{{ imagePath }}" class="icon" style="cursor: pointer;" (click)="stopRecord()">
+        </div>
+        <div *ngSwitchDefault>
+          <img src="{{ imagePath }}" style="cursor: pointer;" (click)="record()">
+        </div>
       </div>
-      <div *ngSwitchCase="'/assets/image/stop.png'">
-        <img src="{{ imagePath }}" class="icon" style="cursor: pointer;" (click)="stopRecord()">
-      </div>
-      <div *ngSwitchDefault>
-        <img src="{{ imagePath }}" style="cursor: pointer;" (click)="record()">
-      </div>
+      <h5 (click)="next()" style="text-align: right; cursor: pointer; margin-right: 20px;">Next</h5>
     </div>
+    <h1> {{ loadedQuote.message }}</h1>
     <h4>Please click the record button and start recording. Click the pause button when you finish recording</h4>
   </div>
 </body>

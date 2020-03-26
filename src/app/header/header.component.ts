@@ -20,4 +20,9 @@ export class HeaderComponent implements OnInit {
     this.isAccountDisplay$ = this.authService.isAccountDisplay;
   }
 
+  onLogOut() {
+    this.isAccountDisplay$ = this.authService.isAccountDisplay;
+    this.authService.logout();
+  }
+
 }
