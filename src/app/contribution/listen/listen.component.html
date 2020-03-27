@@ -6,10 +6,10 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="container bg-success" style="margin-top: 50px; height: 600px;">
+  <div *ngIf="!hidden" class="container bg-success" style="margin-top: 50px; height: 600px;">
     <h2>Evaluate the record</h2>
     <div class="col-xs-6" style="left: 35%;">
-      <audio  controls src="{{ loadedRecord.mediaURL }}" type="audio/mpeg"></audio>
+      <audio controls src="{{ loadedRecord.mediaURL }}" type="audio/mpeg"></audio>
     </div>
     <div class="row" style="margin-top: 100px; margin-left: 450px;">
       <img src="/assets/image/like.png" style="cursor: pointer;" [iconBackground]="'grey'" class="icon">
@@ -17,7 +17,10 @@
     </div>
     <h5 (click)="next()" style="text-align: right; cursor: pointer; margin-right: 20px; margin-top: 50px;">Next</h5>
     <h1> {{ loadedRecord.quote.message }} </h1>
-    <h4>Please click the audio to play, listen and choose your opinion: like or dislike the record</h4>
+    <h4 >Please click the audio to play, listen and choose your opinion: like or dislike the record</h4>
+  </div>
+  <div class="container bg-success" *ngIf="hidden">
+    <h1>No recording found!</h1>
   </div>
 </body>
 </html>

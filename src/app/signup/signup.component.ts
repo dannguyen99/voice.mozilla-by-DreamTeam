@@ -23,12 +23,11 @@ export class SignupComponent implements OnInit {
     const first = this.firstNameRef.nativeElement.value;
     const last = this.lastNameRef.nativeElement.value;
     const em = this.emailRef.nativeElement.value;
-    const pass = this.emailRef.nativeElement.value;
+    const pass = this.passwordRef.nativeElement.value;
     const res = await fetch('https://voiceviettest.herokuapp.com/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            Authorization: 'Bearer token' // Only need this for protected endpoints
         },
         body: JSON.stringify({
             // Change the example value here
@@ -40,7 +39,11 @@ export class SignupComponent implements OnInit {
     });
     const response = await res.json();
     console.log('Sign Up Response', response);
-    this.router.navigate(['/login']);
+    if (response.status !== 422) {
+      this.router.navigate(['/signin']);
+    } else {
+      alert('Email already exists!');
+    }
   }
 
 }

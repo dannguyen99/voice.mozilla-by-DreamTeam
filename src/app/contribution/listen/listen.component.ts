@@ -9,7 +9,9 @@ export class ListenComponent implements OnInit {
 
   records = [];
   loadedRecord;
-  i = 0;
+  page = 1;
+  totalPage: number;
+  hidden: boolean;
 
   constructor() { }
 
@@ -18,30 +20,36 @@ export class ListenComponent implements OnInit {
   }
 
   fetchRecording = async () => {
+    console.log('Token', localStorage.getItem('token'));
     try {
       const data = await fetch(
-        'https://voiceviettest.herokuapp.com/recorder/recordings?page={{page}}&per_page={{per_page}}', {
+        'https://voiceviettest.herokuapp.com/recorder/recordings?page=' + this.page + '&per_page=1', {
           method: 'GET',
           headers: {
               'Content-Type': 'application/x-www-form-urlencoded',
-              Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pbmhkdWMxMDAyOThAZ21haWwuY29tIiwidXNlcklEIjoiNWU3OTdlNmU1NTM4YjEwMDE3Mjc0ZTM2IiwiaWF0IjoxNTg1MTkyNDAyLCJleHAiOjE1ODUxOTYwMDJ9.ZsgOIwzVTaT3d2VnAVrAaHwQwmS4tg43tHEiLgPjj5k'
+              Authorization: `Bearer ${localStorage.getItem('token')}`
           },
         }
       );
       const response = await data.json();
       console.log(response);
+      this.totalPage = response.totalItems;
       for (const record of response.recordings) {
         this.records.push(record);
+        this.loadedRecord = record;
       }
-      this.loadedRecord = this.records[this.i];
     } catch (err) {
       console.log('Error', err);
     }
   }
 
   next() {
-    this.i++;
-    this.fetchRecording();
+    if (this.page < this.totalPage) {
+      this.page++;
+      this.fetchRecording();
+    } else {
+      this.hidden = true;
+    }
   }
 
 }

@@ -17,17 +17,20 @@ export class RecordComponent implements OnInit {
 
   imagePath = '/assets/image/record_voice.png';
   quotes = [];
-  i = 0;
+  page = 1;
   loadedQuote;
+  // quoteID: any;
+
 
   fetchPost = async () => {
+    const userToken = localStorage.getItem('token');
     try {
       const data = await fetch(
-        'https://voiceviettest.herokuapp.com/quotes?page={{page}}&per_page={{per_page}}', {
+        'https://voiceviettest.herokuapp.com/quotes?page=' + this.page + '&per_page=1', {
           method: 'GET',
           headers: {
               'Content-Type': 'application/x-www-form-urlencoded',
-              Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pbmhkdWMxMDAyOThAZ21haWwuY29tIiwidXNlcklEIjoiNWU3OTdlNmU1NTM4YjEwMDE3Mjc0ZTM2IiwiaWF0IjoxNTg1MTg4NDE3LCJleHAiOjE1ODUxOTIwMTd9.jWsSSKry-MQMKCLF6SQ0aGUXIeC0J70us8-Ewe-Ubag'
+              Authorization: `Bearer ${userToken}`
           },
         }
       );
@@ -35,53 +38,16 @@ export class RecordComponent implements OnInit {
       console.log(response);
       for (const quote of response.quotes) {
         this.quotes.push(quote);
+        localStorage.setItem('quoteID', quote._id);
+        this.loadedQuote = quote;
       }
-      this.loadedQuote = this.quotes[this.i];
     } catch (err) {
       console.log('Error', err);
     }
   }
 
-  signUp = async () => {
-    const res = await fetch('https://voiceviettest.herokuapp.com/signup', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: 'Bearer token' // Only need this for protected endpoints
-        },
-        body: JSON.stringify({
-            // Change the example value here
-            firstName: 'Duc',
-            lastName: 'Do Dang Minh',
-            email: 'minhduc100298@gmail.com',
-            password: "md310298"
-        })
-    });
-    const response = await res.json();
-    console.log('Response', response);
-  }
-
-  signIn = async () => {
-    const res = await fetch('https://voiceviettest.herokuapp.com/signin', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: 'Bearer token' // Only need this for protected endpoints
-        },
-        body: JSON.stringify({
-            // Change the example value here
-            email: 'minhduc100298@gmail.com',
-            password: 'md310298'
-        })
-    });
-    const response = await res.json();
-    console.log('Sign In Response', response);
-  }
-
   ngOnInit() {
     this.fetchPost();
-    // this.signUp();
-    this.signIn();
     init();
   }
 
@@ -93,11 +59,10 @@ export class RecordComponent implements OnInit {
   stopRecord() {
     this.imagePath = '/assets/image/record_voice.png';
     stopRecord();
-    uploadFile();
   }
 
   next() {
-    this.i++;
+    this.page++;
     this.fetchPost();
   }
 

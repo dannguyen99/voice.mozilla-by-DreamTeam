@@ -24,6 +24,8 @@ export class AuthService {
     if (userName !== '' && pass !== '' ) {
         this.loggedIn.next(false);
         this.accountDisplay.next(true);
+        console.log('UserName', userName);
+        console.log('Pass', pass);
         const res = await fetch('https://voiceviettest.herokuapp.com/signin', {
           method: 'POST',
           headers: {
@@ -37,8 +39,14 @@ export class AuthService {
           })
         });
         const response = await res.json();
+        if (response.status !== 401) {
+          localStorage.setItem('token', response.token);
+          this.router.navigate(['/home']);
+        } else {
+          this.router.navigate(['/signin']);
+          alert('Wrong email or password!');
+        }
         console.log('Sign In Response', response);
-        this.router.navigate(['/home']);
     }
   }
 
