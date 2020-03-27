@@ -12,6 +12,8 @@ export class ListenComponent implements OnInit {
   page = 1;
   totalPage: number;
   hidden: boolean;
+  hasLike: boolean;
+  hasDislike: boolean;
 
   constructor() { }
 
@@ -44,6 +46,8 @@ export class ListenComponent implements OnInit {
   }
 
   next() {
+    this.hasLike = false;
+    this.hasDislike = false;
     if (this.page < this.totalPage) {
       this.page++;
       this.fetchRecording();
@@ -51,5 +55,17 @@ export class ListenComponent implements OnInit {
       this.hidden = true;
     }
   }
+
+  like() {
+    this.hasLike = true;
+    this.hasDislike = false;
+  }
+
+  dislike() {
+    this.hasDislike = true;
+    this.hasLike = false;
+  }
+
+
 
 }

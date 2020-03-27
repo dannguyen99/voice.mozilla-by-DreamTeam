@@ -12,8 +12,8 @@
       <audio controls src="{{ loadedRecord.mediaURL }}" type="audio/mpeg"></audio>
     </div>
     <div class="row" style="margin-top: 100px; margin-left: 450px;">
-      <img src="/assets/image/like.png" style="cursor: pointer;" [iconBackground]="'grey'" class="icon">
-      <img src="/assets/image/dislike.png" [iconBackground]="'grey'" style="margin-left: 40px; cursor: pointer;" class="icon">
+      <img src="/assets/image/like.png" style="cursor: pointer;" (click)="like()" [ngClass]="{'grey': hasLike, 'transparent': !hasLike}" class="icon">
+      <img src="/assets/image/dislike.png" (click)="dislike()" [ngClass]="{'grey': hasDislike, 'transparent': !hasDislike}" style="margin-left: 40px; cursor: pointer;" class="icon">
     </div>
     <h5 (click)="next()" style="text-align: right; cursor: pointer; margin-right: 20px; margin-top: 50px;">Next</h5>
     <h1> {{ loadedRecord.quote.message }} </h1>

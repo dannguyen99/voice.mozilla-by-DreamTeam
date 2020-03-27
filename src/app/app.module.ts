@@ -20,7 +20,6 @@ import { RecordComponent } from './contribution/record/record.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { AuthService } from './auth.service';
-import { BackgroundDirective } from './background.directive';
 
 @NgModule({
   declarations: [
@@ -40,7 +39,6 @@ import { BackgroundDirective } from './background.directive';
     RecordComponent,
     SignupComponent,
     SigninComponent,
-    BackgroundDirective
   ],
   imports: [
     BrowserModule,

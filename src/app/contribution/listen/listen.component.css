@@ -25,3 +25,11 @@ h4 {
   bottom: 0px;
   padding-bottom: 20px;
 }
+
+.grey {
+  background-color: grey;
+}
+
+.transparent {
+  background-color: transparent;
+}
